@@ -1,0 +1,20 @@
+/*Alev sensörü kullanımı*/
+int led = 8;
+int buzzer = 9;
+int alev_sensoru = A0;
+
+void setup(){
+pinMode(led,OUTPUT);
+pinMode(buzzer,OUTPUT);
+}
+void loop(){
+int alinan_deger = analogRead(alev_sensoru);
+if(alinan_deger < 750) { 
+digitalWrite(led,HIGH);
+digitalWrite(buzzer,HIGH);
+}
+else{
+digitalWrite(led,LOW);
+digitalWrite(buzzer,LOW);
+}
+}
